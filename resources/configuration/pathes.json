@@ -1,0 +1,15 @@
+{
+    "databases"     : {
+        "repositories" : "resources/databases/repositories.json",
+        "projects"     : "resources/databases/projects.json"
+    },
+    "configuration" : {
+        "messages"  : "resources/configuration/messages.json",
+        "server"    : "resources/configuration/server.json"
+    },
+    "ignores"       : {
+        "python"    : "resources/ignores/Python",
+        "node"      : "resources/ignores/Node",
+        "other"     : "resources/ignores/Other"
+    }
+}
