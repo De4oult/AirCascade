@@ -1,16 +1,21 @@
 {
     "info"     : {
-
+        "server_configurated" : "Server configurated"
     },
     "success"  : {
-
+        "repo_succ_inited"    : "Repository successfully initialized",
+        "files_succ_commited" : "Files successfully added to commit",
+        "file_succ_commited"  : "File successfully added to commit",
+        "commit_succ_inited"  : "Successfully commited",
+        "commit_succ_sended"  : "Successfully sended to server"
     },
     "warnings" : {
-
+        "file_in_ignore"      : "File in .airignore-file"
     },
     "errors"   : {
-        "" : "",
-        "" : "",
-        "" : ""
+        "repo_alrd_inited"    : "Repository already initialized",
+        "file_alrd_commited"  : "File already added to commit",
+        "empty_commit"        : "Empty commit",
+        "empty_server_config" : "You need to configure server first! \n `~$ cascade configure`"
     }
 }

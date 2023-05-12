@@ -1,5 +1,5 @@
-from funcs  import get_from_configuration
-from pathes import configuration_pathes 
+from tools.funcs  import get_from_configuration
+from tools.pathes import configuration_pathes 
 
 from colorama import Fore, Style
 
@@ -28,8 +28,44 @@ class __Message:
 
 
 __messages: dict[str, dict[str, str]] = get_from_configuration(configuration_pathes['messages']) 
-print(__messages)
 
-err1 = __Message('Runtime Exception', 'Information')
 
-err1()
+
+### INFOS
+
+info_server_configurated = __Message(__messages['info']['server_configurated'], 'information')
+
+### SUCCS
+
+succ_repo_succ_inited    = __Message(__messages['success']['repo_succ_inited'],    'success')
+succ_files_succ_commited = __Message(__messages['success']['files_succ_commited'], 'success')
+succ_file_succ_commited  = __Message(__messages['success']['file_succ_commited'],  'success')
+succ_commit_succ_inited  = __Message(__messages['success']['commit_succ_inited'],  'success')
+succ_commit_succ_sended  = __Message(__messages['success']['commit_succ_sended'],  'success')
+
+### WARNS
+
+warn_file_in_ignore      = __Message(__messages['warnings']['file_in_ignore'], 'warning')
+
+### ERRORS
+
+err_repo_alrd_inited    = __Message(__messages['errors']['repo_alrd_inited'],    'error')
+err_file_alrd_commited  = __Message(__messages['errors']['file_alrd_commited'],  'error')
+err_empty_commit        = __Message(__messages['errors']['empty_commit'],        'error')
+err_empty_server_config = __Message(__messages['errors']['empty_server_config'], 'error')
+
+
+### TESTS
+
+if __name__ == '__main__':
+    info_server_configurated()
+    succ_repo_succ_inited()
+    succ_files_succ_commited()
+    succ_file_succ_commited()
+    succ_commit_succ_inited()
+    succ_commit_succ_sended()
+    warn_file_in_ignore()
+    err_repo_alrd_inited()
+    err_file_alrd_commited()
+    err_empty_commit()
+    err_empty_server_config()

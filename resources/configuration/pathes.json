@@ -11,5 +11,9 @@
         "python"    : "resources/ignores/Python",
         "node"      : "resources/ignores/Node",
         "other"     : "resources/ignores/Other"
-    }
+    },
+    "projects_dir"  : "projects",
+    "airline_dir"   : ".airline",
+    "declaration"   : "Declaration",
+    "archive_ext"   : ".tar.xz"
 }
