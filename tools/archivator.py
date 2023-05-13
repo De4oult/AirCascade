@@ -8,7 +8,9 @@ import tarfile as tar
 import os
 
 def pack(commit_hash: str) -> str: # Send all commited files to archive
-    with tar.open('%s/%s/%s%s' % (call_dir, airline_dir, commit_hash, archive_ext), 'w:xz') as archive:
+    archive_path: str = '%s/%s/%s%s' % (call_dir, airline_dir, commit_hash, archive_ext)
+
+    with tar.open(archive_path, 'w:xz') as archive:
         os.chdir('%s/%s/' % (call_dir, airline_dir))
 
         for address, _, files in os.walk('%s' % commit_hash):
@@ -17,7 +19,7 @@ def pack(commit_hash: str) -> str: # Send all commited files to archive
         
         os.chdir(call_dir)
 
-        return '%s/%s/%s/%s' % (call_dir, airline_dir, commit_hash, archive_ext)
+        return archive_path
 
 
 

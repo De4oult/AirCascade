@@ -1,0 +1,34 @@
+{
+    "name"    : "Wordamizer",
+    "version" : "v0.0.1",
+    "main"    : "main.py",
+    "execute" : true,
+
+    "author"  : "de4oult",
+    "email"   : "kayra.dist@gmail.com",
+
+    "files"   : [
+        "res/test.txt",
+        "main.py",
+        "Declaration"
+    ],
+    "libs"    : [
+    
+    ],
+    "cmds"    : [
+        "echo 'Successfully delivered!'"
+    ],
+    "notes"   : [
+        "Test repository for testing Airline + Cascade auto-deployment stack."
+    ],
+    
+    "server"  : {
+        "address"  : "",
+        "port"     : "",
+        "username" : "",
+        "password" : ""  
+    },
+
+    "language"   : "python",
+    "identifier" : "874223753368705295"
+}

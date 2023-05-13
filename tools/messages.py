@@ -53,6 +53,8 @@ err_repo_alrd_inited    = __Message(__messages['errors']['repo_alrd_inited'],   
 err_file_alrd_commited  = __Message(__messages['errors']['file_alrd_commited'],  'error')
 err_empty_commit        = __Message(__messages['errors']['empty_commit'],        'error')
 err_empty_server_config = __Message(__messages['errors']['empty_server_config'], 'error')
+err_no_repo_declaration = __Message(__messages['errors']['no_repo_declaration'], 'error')
+err_empty_declaration   = __Message(__messages['errors']['empty_declaration'],   'error')
 
 
 ### TESTS
@@ -69,3 +71,5 @@ if __name__ == '__main__':
     err_file_alrd_commited()
     err_empty_commit()
     err_empty_server_config()
+    err_no_repo_declaration()
+    err_empty_declaration()

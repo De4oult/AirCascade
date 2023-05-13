@@ -31,11 +31,6 @@ def send() -> None:
 def configure() -> None:
     repo.configure()
 
-@cli.command()
-def run() -> None:
-    server.run()
-
-
 
 if __name__ == '__main__':
     cli(obj = {})
