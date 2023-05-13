@@ -1,12 +1,24 @@
+from tools.funcs import get_from_declaration
+
 from datetime import datetime
 from platform import node
 from uuid     import uuid4
 
-def repository(name: str, path: str) -> dict[str, any]:
+def repository(declaration: dict[str, any], path: str) -> dict[str, any]:
     return {
-        'name'   : name,
-        'path'   : path,
-        'author' : ''
+        'name'       : get_from_declaration(declaration, 'name'),
+        'author'     : get_from_declaration(declaration, 'author'),
+        'language'   : get_from_declaration(declaration, 'language'),
+        'identifier' : get_from_declaration(declaration, 'identifier'),
+        'commits'    : [],
+        'path'       : path
+    }
+
+def commit(label: str, hash: str) -> dict[str, any]:
+    return {
+        'label'  : label,
+        'hash'   : hash,
+        'author' : node(),
     }
 
 def declaration() -> dict[str, any]:

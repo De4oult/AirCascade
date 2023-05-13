@@ -1,5 +1,5 @@
+from tools.validators  import declaration_contains
 from tools.pathes import exec_dir
-
 import json
 import os
 
@@ -12,3 +12,6 @@ def convert_to_json(model: dict[str, any]) -> json:
 
 def convert_to_dict(raw_json: json) -> dict[str, any]:
     return json.loads(raw_json)
+
+def get_from_declaration(declaration: dict[str, any], field: str) -> any:
+    return declaration.get(field) if declaration_contains(declaration, field) else ''

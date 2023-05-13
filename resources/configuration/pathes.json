@@ -7,12 +7,8 @@
         "messages"  : "resources/configuration/messages.json",
         "server"    : "resources/configuration/server.json"
     },
-    "ignores"       : {
-        "python"    : "resources/ignores/Python",
-        "node"      : "resources/ignores/Node",
-        "other"     : "resources/ignores/Other"
-    },
-    "projects_dir"  : "projects",
+    "database_dir"  : "resources/databases",
+    "projects_dir"  : "resources/projects",
     "airline_dir"   : ".airline",
     "declaration"   : "Declaration",
     "archive_ext"   : ".tar.xz"

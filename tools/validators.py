@@ -23,10 +23,10 @@ def hash_already_exist(hash: str, hashes: list[str]) -> bool: # Return True if h
 
 # Declaration validators 
 
-def declaration_contains(declaration: dict[str, any], parameter: str) -> bool: # Return True if Declaration has a parameter
+def declaration_contains(declaration: dict[str, any], field: str) -> bool: # Return True if Declaration has a parameter
     return True if (
-        (declaration.get(parameter)) and 
-        (declaration.get(parameter) != [])
+        (declaration.get(field)) and 
+        (declaration.get(field) != [])
     ) else False
 
 def declaration_filled(declaration: dict[str, any]) -> bool:
@@ -50,5 +50,5 @@ def server_filled(declaration: dict[str, any]) -> bool:
 
 # Database 
 
-def database_contains(database, key: str, value: str) -> bool:
-    return database.contains(key, value) 
+def repository_already_initialized(database, path: str) -> bool:
+    return database.contains('path', path)

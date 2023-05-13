@@ -1,8 +1,8 @@
-from client.declarator import create_declaration, read_declaration, validate_declaration
+from client.declarator import create_declaration, validate_declaration
 from tools.funcs       import convert_to_dict
+from client.repo       import initialize
 
 create_declaration()
+declaration = validate_declaration('Declaration')
 
-declaration = read_declaration('Declaration')
-
-validate_declaration(declaration)
+initialize()

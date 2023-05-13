@@ -17,7 +17,7 @@
         "file_alrd_commited"  : "File already added to commit",
         "empty_commit"        : "Empty commit",
         "empty_server_config" : "You need to configure server first! \n `~$ cascade configure`",
-        "no_repo_declaration" : "Repository does not contain Declaration-file",
+        "no_repo_declaration" : "Folder does not contain Declaration-file",
         "empty_declaration"   : "You need to fill in the required fields of Declaration-file: \n * `name` \n * `author` \n * `files` \n * `language` \n * `identifier`",
         "empty_server"        : "You need to configure server"
     }

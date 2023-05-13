@@ -14,6 +14,10 @@ def init() -> None:
     repo.initialize()
 
 @cli.command()
+def declarate() -> None:
+    repo.declarate()
+
+@cli.command()
 @click.argument('files')
 def add(files: str) -> None:
     repo.add(files)

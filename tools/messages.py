@@ -21,6 +21,7 @@ class __Message:
                 print(Fore.YELLOW  + '[%s] -> %s' % (self.type.upper(), self.text) + Style.RESET_ALL)
             case 'error':
                 print(Fore.RED     + '[%s] -> %s' % (self.type.upper(), self.text) + Style.RESET_ALL)
+                exit()
             case 'comment':
                 print(Fore.MAGENTA + '[%s] -> %s' % (self.type.upper(), self.text) + Style.RESET_ALL)
             case 'text':
@@ -55,7 +56,7 @@ err_empty_commit        = __Message(__messages['errors']['empty_commit'],       
 err_empty_server_config = __Message(__messages['errors']['empty_server_config'], 'error')
 err_no_repo_declaration = __Message(__messages['errors']['no_repo_declaration'], 'error')
 err_empty_declaration   = __Message(__messages['errors']['empty_declaration'],   'error')
-
+err_empty_server        = __Message(__messages['errors']['empty_server'],        'error')
 
 ### TESTS
 

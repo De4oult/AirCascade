@@ -1,5 +1,5 @@
 from tools.pathes     import exec_dir, call_dir, projects_dir, database_pathes, declaration_file, airline_dir, archive_ext
-from tools.validators import path_exist, database_contains
+from tools.validators import path_exist
 from tools.database   import Database 
 
 from server.customs   import declarate
@@ -23,22 +23,22 @@ def pack(commit_hash: str) -> str: # Send all commited files to archive
 
 
 
-def unpack(archive_path: str) -> str: # Exctract commit into projects folder
-    file = archive_path.split('/')[-1]
-    path = '%s/%s/%s' % (exec_dir, projects_dir, file)
-    hash = file[:-7]
+# def unpack(archive_path: str) -> str: # Exctract commit into projects folder
+#     file = archive_path.split('/')[-1]
+#     path = '%s/%s/%s' % (exec_dir, projects_dir, file)
+#     hash = file[:-7]
 
-    database = Database('%s/%s' % (exec_dir, database_pathes['projects']))
+#     database = Database('%s/%s' % (exec_dir, database_pathes['projects']))
 
-    if not path_exist('%s/%s/%s' % (exec_dir, projects_dir, hash)):
-        with tar.open(path, 'r') as archive:
-            archive.extractall('%s/%s' % (exec_dir, projects_dir))
+#     if not path_exist('%s/%s/%s' % (exec_dir, projects_dir, hash)):
+#         with tar.open(path, 'r') as archive:
+#             archive.extractall('%s/%s' % (exec_dir, projects_dir))
 
-    os.remove(path)
+#     os.remove(path)
 
-    identifier = declarate('%s/%s/%s/%s' % (exec_dir, projects_dir, hash, declaration_file))
+#     identifier = declarate('%s/%s/%s/%s' % (exec_dir, projects_dir, hash, declaration_file))
 
-    if not database_contains(database, 'identifier', identifier):
-        database.push({'identifier' : identifier})
+#     if not database_contains(database, 'identifier', identifier):
+#         database.push({'identifier' : identifier})
 
-    return identifier, hash, '%s/%s/%s' % (exec_dir, projects_dir, hash)
+#     return identifier, hash, '%s/%s/%s' % (exec_dir, projects_dir, hash)

@@ -17,8 +17,8 @@ pathes = __pathes('%s/resources/configuration/pathes.json' % __work_directory())
 
 configuration_pathes = pathes.get('configuration')
 database_pathes      = pathes.get('databases')
-ignores_pathes       = pathes.get('ignores')
 
+database_dir         = pathes.get('database_dir')
 projects_dir         = pathes.get('projects_dir')
 airline_dir          = pathes.get('airline_dir')
 
