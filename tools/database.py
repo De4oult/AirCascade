@@ -28,3 +28,6 @@ class Database:
 
     def contains(self, key: str, value: any) -> bool:
         return True if self.database.getByQuery({key : value}) != [] else False
+
+    def delete(self, id: int) -> None:
+        self.database.deleteById(id)

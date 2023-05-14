@@ -43,6 +43,7 @@ succ_files_succ_commited = __Message(__messages['success']['files_succ_commited'
 succ_file_succ_commited  = __Message(__messages['success']['file_succ_commited'],  'success')
 succ_commit_succ_inited  = __Message(__messages['success']['commit_succ_inited'],  'success')
 succ_commit_succ_sended  = __Message(__messages['success']['commit_succ_sended'],  'success')
+succ_repo_succ_deleted   = __Message(__messages['success']['repo_succ_deleted'],   'success')
 
 ### WARNS
 
@@ -57,7 +58,7 @@ err_empty_server_config = __Message(__messages['errors']['empty_server_config'],
 err_no_repo_declaration = __Message(__messages['errors']['no_repo_declaration'], 'error')
 err_empty_declaration   = __Message(__messages['errors']['empty_declaration'],   'error')
 err_empty_server        = __Message(__messages['errors']['empty_server'],        'error')
-
+err_no_repo_inited      = __Message(__messages['errors']['no_repo_inited'],      'error')
 ### TESTS
 
 if __name__ == '__main__':

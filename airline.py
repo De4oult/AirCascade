@@ -32,6 +32,10 @@ def send() -> None:
     repo.send()
 
 @cli.command()
+def drop() -> None:
+    repo.drop()
+
+@cli.command()
 def configure() -> None:
     repo.configure()
 
