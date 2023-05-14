@@ -15,3 +15,6 @@ def convert_to_dict(raw_json: json) -> dict[str, any]:
 
 def get_from_declaration(declaration: dict[str, any], field: str) -> any:
     return declaration.get(field) if declaration_contains(declaration, field) else ''
+
+def push_to_declaration(declaration: dict[str, any], field: str, value: any) -> None:
+    declaration[field] = value

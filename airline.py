@@ -10,17 +10,17 @@ def cli(context):
 
 
 @cli.command()
-def init() -> None:
-    repo.initialize()
-
-@cli.command()
 def declarate() -> None:
     repo.declarate()
 
 @cli.command()
-@click.argument('files')
-def add(files: str) -> None:
-    repo.add(files)
+def init() -> None:
+    repo.initialize()
+
+@cli.command()
+@click.argument()
+def add() -> None:
+    repo.add()
 
 @cli.command()
 @click.argument('label')

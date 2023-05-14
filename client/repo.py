@@ -6,8 +6,8 @@ from tools.database    import Database
 from client.declarator import create_declaration, validate_declaration
 from client            import models
 
-path_must_exist('%s/%s' % (call_dir, airline_dir))
 path_must_exist('%s/%s' % (exec_dir, database_dir))
+path_must_exist('%s/%s' % (call_dir, airline_dir))
 
 def declarate() -> None:
     create_declaration()
@@ -26,6 +26,14 @@ def initialize() -> None:
     )
 
     succ_repo_succ_inited()
+
+def add() -> None:
+    declaration = validate_declaration('%s/%s' % (call_dir, declaration_file))
+
+    #
+
+def label() -> None:
+    pass # ignore .airline
 
 def drop() -> None:
     database = Database('%s/%s' % (exec_dir, database_pathes['repositories']))
