@@ -18,18 +18,13 @@ def init() -> None:
     repo.initialize()
 
 @cli.command()
-@click.argument()
-def add() -> None:
-    repo.add()
-
-@cli.command()
 @click.argument('label')
 def label(label: str) -> None:
     repo.label(label)
 
 @cli.command()
-def send() -> None:
-    repo.send()
+def deliver() -> None:
+    repo.deliver()
 
 @cli.command()
 def drop() -> None:

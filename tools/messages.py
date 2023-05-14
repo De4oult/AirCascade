@@ -40,7 +40,6 @@ info_server_configurated = __Message(__messages['info']['server_configurated'], 
 
 succ_repo_succ_inited    = __Message(__messages['success']['repo_succ_inited'],    'success')
 succ_files_succ_commited = __Message(__messages['success']['files_succ_commited'], 'success')
-succ_file_succ_commited  = __Message(__messages['success']['file_succ_commited'],  'success')
 succ_commit_succ_inited  = __Message(__messages['success']['commit_succ_inited'],  'success')
 succ_commit_succ_sended  = __Message(__messages['success']['commit_succ_sended'],  'success')
 succ_repo_succ_deleted   = __Message(__messages['success']['repo_succ_deleted'],   'success')
@@ -48,6 +47,7 @@ succ_repo_succ_deleted   = __Message(__messages['success']['repo_succ_deleted'],
 ### WARNS
 
 warn_file_in_ignore      = __Message(__messages['warnings']['file_in_ignore'], 'warning')
+warn_no_file_in_dir      = __Message(__messages['warnings']['no_file_in_dir'], 'warning')
 
 ### ERRORS
 

@@ -8,8 +8,9 @@
     "email"   : "kayra.dist@gmail.com",
 
     "files"   : [
-        "res/test.txt",
-        "main.py",
+        "resources/examples",
+        "cascade.py",
+        "airline.py",
         "Declaration"
     ],
     "libs"    : [

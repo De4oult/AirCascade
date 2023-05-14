@@ -5,18 +5,18 @@
     "success"  : {
         "repo_succ_inited"    : "Repository successfully initialized",
         "files_succ_commited" : "Files successfully added to commit",
-        "file_succ_commited"  : "File successfully added to commit",
         "commit_succ_inited"  : "Successfully commited",
         "commit_succ_sended"  : "Successfully sended to server",
         "repo_succ_deleted"   : "Repository successfully deleted"
     },
     "warnings" : {
-        "file_in_ignore"      : "File in .airignore-file"
+        "file_in_ignore"      : "File in .airignore-file",
+        "no_file_in_dir"      : "No file in directory"
     },
     "errors"   : {
         "repo_alrd_inited"    : "Repository already initialized",
         "file_alrd_commited"  : "File already added to commit",
-        "empty_commit"        : "Empty commit",
+        "empty_commit"        : "Files were not added to commit",
         "empty_server_config" : "You need to configure server first! \n `~$ cascade configure`",
         "no_repo_declaration" : "Folder does not contain Declaration-file",
         "empty_declaration"   : "You need to fill in the required fields of Declaration-file: \n * `name` \n * `author` \n * `files` \n * `language` \n * `identifier`",

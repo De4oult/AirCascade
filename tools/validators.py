@@ -14,6 +14,10 @@ def path_must_exist(path: str) -> None:      # If the folder doesn't exist, it w
 def path_exist(path: str) -> bool:
     return os.path.exists('%s' % path)
 
+def path_file_format(path: str) -> str:
+    if     os.path.isdir('%s' % path) and path[-1] != '/': return '%s/' % path
+    if not os.path.isdir('%s' % path) and path[-1] == '/': return '%s'  % path[:-1]
+    return path 
 
 # Hash validators
 
