@@ -1,4 +1,4 @@
-from tools.messages    import err_repo_alrd_inited, succ_repo_succ_inited, err_no_repo_inited, succ_repo_succ_deleted
+from tools.messages    import err_repo_alrd_inited, succ_repo_succ_inited, err_no_repo_inited, succ_repo_succ_deleted, succ_commit_succ_inited, err_smthing_went_wrong
 from tools.pathes      import exec_dir, call_dir, database_dir, database_pathes, declaration_file, airline_dir
 from tools.validators  import path_must_exist, repository_already_initialized
 from tools.funcs       import get_from_declaration, commit_hash
@@ -31,15 +31,37 @@ def initialize() -> None:
     
 
 def label(label: str) -> None:
-    declaration = validate_declaration('%s/%s' % (call_dir, declaration_file))
+    declaration: dict[str, any] = validate_declaration('%s/%s' % (call_dir, declaration_file))
+    files      : any            = get_from_declaration(declaration, 'files')
+    hash       : str            = commit_hash()
 
-    files = get_from_declaration(declaration, 'files')
-
-    copy_files(files, '%s/%s/%s/' % (call_dir, airline_dir, commit_hash()))
+    copy_files(files, '%s/%s/%s/' % (call_dir, airline_dir, hash))
 
     database = Database('%s/%s' % (exec_dir, database_pathes['repositories']))
 
-    # add commit_model to db
+    repository: dict[str, any] = database.get_instance('path', '%s' % call_dir)
+    commits   : list[str]      = repository.get('commits')
+
+    commits .append(models.commit(label, hash))
+    database.update(repository.get('id'), 'commits', commits)
+
+    succ_commit_succ_inited()
+
+def deliver() -> None:
+    declaration: dict[str, any] = validate_declaration('%s/%s' % (call_dir, declaration_file))
+    
+    database = Database('%s/%s' % (exec_dir, database_pathes['repositories']))
+
+    try:
+        commits: list[str] = database.get_instance('path', '%s' % call_dir).get('commit')
+
+        # archive and send
+    
+    except:
+        err_smthing_went_wrong()
+
+def fast_delivery(label: str) -> None:
+    pass
 
 def drop() -> None:
     database = Database('%s/%s' % (exec_dir, database_pathes['repositories']))

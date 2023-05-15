@@ -5,7 +5,7 @@
     "success"  : {
         "repo_succ_inited"    : "Repository successfully initialized",
         "files_succ_commited" : "Files successfully added to commit",
-        "commit_succ_inited"  : "Successfully commited",
+        "commit_succ_inited"  : "Successfully labeled",
         "commit_succ_sended"  : "Successfully sended to server",
         "repo_succ_deleted"   : "Repository successfully deleted"
     },
@@ -21,6 +21,7 @@
         "no_repo_declaration" : "Folder does not contain Declaration-file",
         "empty_declaration"   : "You need to fill in the required fields of Declaration-file: \n * `name` \n * `author` \n * `files` \n * `language` \n * `identifier`",
         "empty_server"        : "You need to configure server",
-        "no_repo_inited"      : "There is no repository initialized in this folder"
+        "no_repo_inited"      : "There is no repository initialized in this folder",
+        "smthing_went_wrong"  : "Something went wrong"
     }
 }

@@ -59,19 +59,4 @@ err_no_repo_declaration = __Message(__messages['errors']['no_repo_declaration'],
 err_empty_declaration   = __Message(__messages['errors']['empty_declaration'],   'error')
 err_empty_server        = __Message(__messages['errors']['empty_server'],        'error')
 err_no_repo_inited      = __Message(__messages['errors']['no_repo_inited'],      'error')
-### TESTS
-
-if __name__ == '__main__':
-    info_server_configurated()
-    succ_repo_succ_inited()
-    succ_files_succ_commited()
-    succ_file_succ_commited()
-    succ_commit_succ_inited()
-    succ_commit_succ_sended()
-    warn_file_in_ignore()
-    err_repo_alrd_inited()
-    err_file_alrd_commited()
-    err_empty_commit()
-    err_empty_server_config()
-    err_no_repo_declaration()
-    err_empty_declaration()
+err_smthing_went_wrong  = __Message(__messages['errors']['smthing_went_wrong'],  'error')
