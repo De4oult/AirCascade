@@ -1,10 +1,12 @@
-from tools.messages    import err_repo_alrd_inited, succ_repo_succ_inited, err_no_repo_inited, succ_repo_succ_deleted, succ_commit_succ_inited, err_smthing_went_wrong
+from tools.messages    import err_repo_alrd_inited, succ_repo_succ_inited, err_no_repo_inited, succ_repo_succ_deleted, succ_commit_succ_inited, err_smthing_went_wrong, succ_commit_succ_sended
 from tools.pathes      import exec_dir, call_dir, database_dir, database_pathes, declaration_file, airline_dir
 from tools.validators  import path_must_exist, repository_already_initialized
 from tools.funcs       import get_from_declaration, commit_hash
 from tools.database    import Database
+from tools.archivator  import pack
 
 from client.declarator import create_declaration, validate_declaration
+from client.delivery   import send_to_server
 from client.files      import copy_files
 from client            import models
 
@@ -53,10 +55,14 @@ def deliver() -> None:
     database = Database('%s/%s' % (exec_dir, database_pathes['repositories']))
 
     try:
-        commits: list[str] = database.get_instance('path', '%s' % call_dir).get('commit')
+        last_commit: list[str] = database.get_instance('path', '%s' % call_dir).get('commits')[-1]
 
-        # archive and send
-    
+        archive_path = pack(last_commit.get('hash'))
+           
+        send_to_server(declaration, archive_path, last_commit)
+
+        succ_commit_succ_sended()
+
     except:
         err_smthing_went_wrong()
 

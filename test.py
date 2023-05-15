@@ -1,3 +1,5 @@
-from client.repo import label
+from client.repo import label, deliver
 
-label('test')
+
+label('test commit')
+deliver()

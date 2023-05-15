@@ -5,6 +5,7 @@ from tools.database   import Database
 from server.customs   import declarate
 
 import tarfile as tar
+import shutil
 import os
 
 def pack(commit_hash: str) -> str: # Send all commited files to archive
@@ -19,7 +20,8 @@ def pack(commit_hash: str) -> str: # Send all commited files to archive
         
         os.chdir(call_dir)
 
-        return archive_path
+    shutil.rmtree('%s/%s/%s' % (call_dir, airline_dir, commit_hash))
+    return archive_path
 
 
 
