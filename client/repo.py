@@ -66,8 +66,9 @@ def deliver() -> None:
     except:
         err_smthing_went_wrong()
 
-def fast_delivery(label: str) -> None:
-    pass
+def fast_delivery(label_comment: str) -> None:
+    label(label_comment)
+    deliver()
 
 def drop() -> None:
     database = Database('%s/%s' % (exec_dir, database_pathes['repositories']))

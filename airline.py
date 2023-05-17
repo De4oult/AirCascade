@@ -27,6 +27,11 @@ def deliver() -> None:
     repo.deliver()
 
 @cli.command()
+@click.argument('label')
+def fast(label: str) -> None:
+    repo.fast_delivery(label)
+
+@cli.command()
 def drop() -> None:
     repo.drop()
 
