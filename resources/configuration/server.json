@@ -1,6 +1,6 @@
 {
-    "server_address" : "",
-    "server_port"    : "",
-    "username"       : "",
-    "password"       : ""
+    "server_address" : "127.0.0.1",
+    "server_port"    : "21",
+    "username"       : "test_user",
+    "password"       : "test_pass"
 }

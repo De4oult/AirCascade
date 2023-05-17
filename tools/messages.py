@@ -35,6 +35,7 @@ __messages: dict[str, dict[str, str]] = get_from_configuration(configuration_pat
 ### INFOS
 
 info_server_configurated = __Message(__messages['info']['server_configurated'], 'information')
+info_server_was_runned   = __Message(__messages['info']['server_was_runned'],   'information')
 
 ### SUCCS
 

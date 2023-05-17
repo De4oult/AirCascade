@@ -1,6 +1,7 @@
 {
     "info"     : {
-        "server_configurated" : "Server configurated"
+        "server_configurated" : "Server configurated",
+        "server_was_runned"   : "Server has been started"
     },
     "success"  : {
         "repo_succ_inited"    : "Repository successfully initialized",

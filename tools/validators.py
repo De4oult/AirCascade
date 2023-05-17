@@ -56,3 +56,13 @@ def server_filled(declaration: dict[str, any]) -> bool:
 
 def repository_already_initialized(database, path: str) -> bool:
     return database.contains('path', path)
+
+# Server
+
+def server_config(config: dict[str, any]) -> None:
+    return True if (
+        (config.get('server_address') != '') and
+        (config.get('server_port')    != '') and
+        (config.get('username')       != '') and
+        (config.get('password')       != '') 
+    ) else False
