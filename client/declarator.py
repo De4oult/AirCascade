@@ -1,5 +1,5 @@
-from tools.messages   import err_no_repo_declaration, err_empty_declaration, err_empty_server
-from tools.validators import path_exist, declaration_filled, server_filled
+from tools.messages   import err_no_repo_declaration, err_empty_declaration, err_empty_server, err_empty_executable
+from tools.validators import path_exist, declaration_filled, server_filled, declaration_executable
 from tools.funcs      import convert_to_json, convert_to_dict
 from tools.pathes     import call_dir, declaration_file
 from client           import models
@@ -16,8 +16,9 @@ def create_declaration() -> None:
     
 def validate_declaration(path: str) -> dict[str, any]:
     declaration = __read_declaration(path)
-    if not declaration_filled(declaration): err_empty_declaration();
-    if not server_filled(declaration):      err_empty_server();
+    if not declaration_filled(declaration):     err_empty_declaration();
+    if not server_filled(declaration):          err_empty_server();
+    if not declaration_executable(declaration): err_empty_executable();
     return declaration
 
 def __read_declaration(path: str) -> dict[str, any]:

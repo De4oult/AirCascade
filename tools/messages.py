@@ -61,3 +61,4 @@ err_empty_declaration   = __Message(__messages['errors']['empty_declaration'],  
 err_empty_server        = __Message(__messages['errors']['empty_server'],        'error')
 err_no_repo_inited      = __Message(__messages['errors']['no_repo_inited'],      'error')
 err_smthing_went_wrong  = __Message(__messages['errors']['smthing_went_wrong'],  'error')
+err_empty_executable    = __Message(__messages['errors']['empty_executable'],    'error')

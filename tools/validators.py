@@ -51,6 +51,11 @@ def server_filled(declaration: dict[str, any]) -> bool:
         (server.get('password') != '')
     ) else False
 
+def declaration_executable(declaration: dict[str, any]) -> bool:
+    return False if (
+        (declaration.get('execute') == True) and
+        (declaration.get('main')    == '')
+    ) else True
 
 # Database 
 
